@@ -21,14 +21,6 @@ const createMessages = (message) => {
     return true;
 }
 
-exports.getMessages = (_, res) => {
-    res.status(200).json({
-        status: 'success',
-        results: messageList.length,
-        data: messageList
-    })
-}
-
 exports.getMessagesWithUser = (req, res) => {
     let messagesWithUser = [];
     
