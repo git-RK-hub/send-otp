@@ -80,10 +80,10 @@ exports.sendOTP = async (req, res) => {
             message: 'Contact with id ' + contactId + ' is missing'
         })
     }
+    const isMessageSent = await sendSMSUsingTwilio(contact.contactNo, otpString);
 
-    if(await sendSMSUsingTwilio(contact.contactNo, otpString)) {
+    if(isMessageSent.status) {
         if(createMessages({otp, contactId})) {
-            
             res.status(201).json({
                 status: 'success',
                 message: 'OTP sent succesfully'
@@ -97,8 +97,7 @@ exports.sendOTP = async (req, res) => {
     } else {
         return res.status(500).json({
             status: 'fail',
-            message: 'Twilio failed to send otp'
+            message: isMessageSent.errorMsg || 'Twilio failed to send otp'
         })
     }
-
 }
