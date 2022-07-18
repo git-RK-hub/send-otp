@@ -1,0 +1,36 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+
+table {
+  margin-top:20px;
+}
+
+.icon {
+  float:right;
+}
+
+#sendMessage-wrapper {
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+}
+
+.contact-info{
+  font-size: 20px;
+}
+
+.box {
+  padding: 10px;
+  height: 50vh;
+  width: 50vw;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.form {
+  margin-top: 20%;
+}
